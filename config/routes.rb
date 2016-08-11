@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+get 'employees/index'
+
+resources :employees
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  get 'pages/home'
+  get "about" => "pages#about"
+
+  devise_for :users
+  root "pages#home"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

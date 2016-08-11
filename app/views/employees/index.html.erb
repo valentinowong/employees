@@ -1,0 +1,11 @@
+<% @employees.each do |employee| %>
+	<h2>
+		<%= link_to employee.full_name, employee %>
+		<br>
+	</h2>
+	<h3>
+		<%= employee.email %>
+		<br>
+		<%= employee.phone_number %>
+	</h3>
+<% end %>
