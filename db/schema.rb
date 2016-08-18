@@ -46,18 +46,8 @@ ActiveRecord::Schema.define(version: 20160807174703) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
-  create_table "employees", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.date     "birthday"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "positions", force: true do |t|
-    t.integer  "employee_id"
+    t.integer  "user_id"
     t.integer  "role_type_id"
     t.date     "start_date"
     t.date     "end_date"
@@ -73,7 +63,11 @@ ActiveRecord::Schema.define(version: 20160807174703) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email",                  default: "", null: false
+    t.string   "phone_number"
+    t.date     "birthday"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"

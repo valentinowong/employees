@@ -1,7 +1,7 @@
 class CreatePositions < ActiveRecord::Migration
   def change
     create_table :positions do |t|
-  		t.integer :employee_id
+  		t.integer :user_id
   		t.integer :role_type_id
   		t.date :start_date
   		t.date :end_date
