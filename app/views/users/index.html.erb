@@ -1,0 +1,11 @@
+<% @users.each do |user| %>
+	<h2>
+		<%= link_to user.full_name, user %>
+		<br>
+	</h2>
+	<h3>
+		<%= user.email %>
+		<br>
+		<%= user.phone_number %>
+	</h3>
+<% end %>
